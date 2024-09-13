@@ -1,0 +1,7 @@
+#!/bin/bash
+
+packer init Rocky/rocky9/packer.pkr.hcl
+
+export PROXMOX_PASSWORD=""
+export SSH_PASS=""
+packer build -var-file=variables.pkrvars.hcl Rocky/rocky9/packer.pkr.hcl
