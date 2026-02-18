@@ -45,7 +45,7 @@ source "proxmox-iso" "rocky9-kickstart" {
   scsi_controller          = "virtio-scsi-single"
   http_directory           = "Rocky/rocky9/http"
   insecure_skip_tls_verify = true
-  iso_file                 = "local:iso/Rocky-9.4-x86_64-dvd.iso"
+  iso_file                 = "local:iso/Rocky-9.6-x86_64-dvd.iso"
   iso_checksum             = "none"
   network_adapters {
     bridge = "vmbr0"
@@ -54,13 +54,13 @@ source "proxmox-iso" "rocky9-kickstart" {
   node                 = "${var.proxmox_node}"
   proxmox_url          = "${var.proxmox_url}"
   username             = "${var.proxmox_username}"
-  password             = "${var.proxmox_password}"
+  token                = "${var.proxmox_password}"
   ssh_username         = "ansible"
   #ssh_password         = "${var.ssh_pass}"
-  ssh_password         = "ansible"
+  ssh_password         = ""
   ssh_timeout          = "15m"
-  template_description = "Rocky 9.4, generated on ${timestamp()}"
-  template_name        = "rocky-9.4"
+  template_description = "Rocky 9.6, generated on ${timestamp()}"
+  template_name        = "rocky-9.6"
   unmount_iso          = true
 }
 
